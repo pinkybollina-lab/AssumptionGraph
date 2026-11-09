@@ -1,16 +1,196 @@
-# React + Vite
+\# AssumptionGraph
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+\## Enterprise Assumption Intelligence
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the Oxlint configuration
+AssumptionGraph helps organizations capture assumptions across departments, identify inconsistencies, understand dependencies, and explore the downstream impact of potential decisions.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+
+
+\## Key Features
+
+
+
+\- \*\*Assumption Management:\*\* Capture and organize organizational assumptions.
+
+\- \*\*Voice Intelligence:\*\* Extract information from voice input using the configured speech service.
+
+\- \*\*Assumption Graph:\*\* Visualize relationships and dependencies between assumptions.
+
+\- \*\*Findings:\*\* Identify potential contradictions for human review.
+
+\- \*\*Scenario Simulator:\*\* Explore possible changes and their downstream impacts.
+
+
+
+\## Technology Stack
+
+
+
+\- \*\*Frontend:\*\* React, Vite, React Flow
+
+\- \*\*Backend:\*\* Python, FastAPI, SQLAlchemy
+
+\- \*\*Database:\*\* SQLite for local development; configurable through `DATABASE\_URL`.
+
+
+
+\## Project Structure
+
+
+
+```text
+
+AssumptionGraph/
+
+├── backend/
+
+│   ├── app/
+
+│   │   ├── routers/
+
+│   │   ├── services/
+
+│   │   ├── database.py
+
+│   │   ├── main.py
+
+│   │   ├── models.py
+
+│   │   └── schemas.py
+
+│   ├── requirements.txt
+
+│   └── .env.example
+
+├── frontend/
+
+│   ├── public/
+
+│   ├── src/
+
+│   └── package.json
+
+├── .gitignore
+
+└── README.md
+
+```
+
+
+
+\## Local Setup
+
+
+
+\### Backend
+
+
+
+Open a terminal in the project folder:
+
+
+
+```powershell
+
+cd backend
+
+python -m venv .venv
+
+.\\.venv\\Scripts\\Activate.ps1
+
+pip install -r requirements.txt
+
+```
+
+
+
+Create a local `.env` file using `.env.example` as a template. Configure your own GNANI API credentials if you intend to use the speech service. Never upload actual API keys.
+
+
+
+Start the backend:
+
+
+
+```powershell
+
+uvicorn app.main:app --reload
+
+```
+
+
+
+\- Backend: http://127.0.0.1:8000
+
+\- API documentation: http://127.0.0.1:8000/docs
+
+
+
+\### Frontend
+
+
+
+Open a second terminal:
+
+
+
+```powershell
+
+cd frontend
+
+npm install
+
+npm run dev
+
+```
+
+
+
+Open the frontend URL printed by Vite, normally http://localhost:5173.
+
+
+
+\## Running Tests
+
+
+
+From the backend directory:
+
+
+
+```powershell
+
+pytest test\_scenarios.py
+
+```
+
+
+
+Additional extraction test scripts are available in the backend directory.
+
+
+
+\## Configuration and Security
+
+
+
+\- Keep API keys and credentials in a local `.env` file.
+
+\- Do not commit database files, backups, virtual environments, or generated build files.
+
+\- Configure production environment variables and allowed frontend origins before deployment.
+
+\- A fresh local setup creates its own database. The development database is not included in this repository.
+
+
+
+\## Project Status
+
+
+
+This repository contains the application source code and development tests. Production deployment and production database configuration must be completed separately.
+
