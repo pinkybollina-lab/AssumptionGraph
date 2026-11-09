@@ -1,3 +1,5 @@
+
+import os
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
@@ -27,12 +29,19 @@ app.include_router(graph.router)
 app.include_router(scenarios.router)
 
 # Configure frontend access
+frontend_url = os.getenv("FRONTEND_URL", "").strip().rstrip("/")
+
+allowed_origins = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+]
+
+if frontend_url:
+    allowed_origins.append(frontend_url)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "http://127.0.0.1:5173"
-    ],
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
