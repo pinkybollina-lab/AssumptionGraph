@@ -429,7 +429,7 @@ function App() {
 
           <div className="topbar-actions">
             <span className="environment-tag">
-              <CircleDot size={11} /> LOCAL ENVIRONMENT
+              <CircleDot size={11} /> LIVE ENVIRONMENT
             </span>
 
             <button
