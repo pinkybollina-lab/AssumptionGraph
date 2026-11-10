@@ -1,4 +1,3 @@
-
 import os
 
 from dotenv import load_dotenv
@@ -12,18 +11,13 @@ DATABASE_URL = os.getenv(
     "sqlite:///./assumptiongraph.db"
 )
 
-# Use Psycopg 3 for PostgreSQL connections
 if DATABASE_URL.startswith("postgres://"):
     DATABASE_URL = DATABASE_URL.replace(
-        "postgres://",
-        "postgresql+psycopg://",
-        1
+        "postgres://", "postgresql+psycopg://", 1
     )
 elif DATABASE_URL.startswith("postgresql://"):
     DATABASE_URL = DATABASE_URL.replace(
-        "postgresql://",
-        "postgresql+psycopg://",
-        1
+        "postgresql://", "postgresql+psycopg://", 1
     )
 
 connect_args = {}
