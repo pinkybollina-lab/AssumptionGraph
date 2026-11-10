@@ -2,7 +2,7 @@
 ### Enterprise Assumption Intelligence
 
 <p align="center">
-  **Turning scattered organizational assumptions into actionable intelligence.**
+  Turning scattered organizational assumptions into actionable intelligence.
 </p>
 
 <p align="center">
@@ -222,7 +222,7 @@ Built as part of **The Great Indian AI Internship Challenge**, integrating Gnani
 ---
 
 <p align="center">
-  **AssumptionGraph – Understand What Your Organization Believes.**
+  AssumptionGraph – Understand What Your Organization Believes.
   
   Identify What Might Conflict. Explore What Happens Next.
 </p>
